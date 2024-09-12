@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import featureImage1 from "/images/illustration-features-tab-1.svg";
 import featureImage2 from "/images/illustration-features-tab-2.svg";
 import featureImage3 from "/images/illustration-features-tab-3.svg";
@@ -33,7 +33,15 @@ const Features = () => {
 
     return (
         <>
-            <Container sx={{ mt: "6rem", mb: "8rem", textAlign: "center" }}>
+            <Container
+                sx={{
+                    mt: "6rem",
+                    mb: "8rem",
+                    textAlign: "center",
+                    width: { md: "70%", lg: "50%" },
+                    // border: "solid",
+                }}
+            >
                 <Box>
                     <Typography
                         component="h4"
@@ -46,21 +54,48 @@ const Features = () => {
                     >
                         Features
                     </Typography>
-                    <Typography component="p" variant="p" color="neutral.main">
-                        Our amin is to make it quick and easy for you to access
+                    <Typography
+                        component="p"
+                        variant="p"
+                        color="neutral.main"
+                        sx={{
+                            width: { md: "85%" },
+                            mx: { md: "auto" },
+                            // border: "solid",
+                        }}
+                    >
+                        Our aim is to make it quick and easy for you to access
                         your favourite websites. Your bookmarks sync between
                         your devices so you can access them on the go.
                     </Typography>
 
-                    <Stack sx={{ my: "3rem" }}>
+                    <Box
+                        sx={{
+                            my: "3rem",
+                            // border: "solid",
+                            display: "flex",
+                            flexDirection: { xs: "column", md: "row" },
+                            columnGap: 2,
+                            // justifyContent: "space-between",
+                        }}
+                    >
                         {features.map((feature) => (
                             <Box
                                 key={feature.heading}
                                 sx={{
-                                    borderTop: "solid 1px #ccc",
+                                    flexGrow: "1",
+                                    borderTop: {
+                                        xs: "solid 1px #ccc",
+                                        md: "none",
+                                    },
+                                    borderBottom: { md: "solid 1px #ccc" },
                                     color: "neutral.main",
                                     display: "flex",
-                                    justifyContent: "center",
+                                    justifyContent: {
+                                        xs: "center",
+                                        md: "start",
+                                    },
+
                                     "&:last-of-type": {
                                         borderBottom: "solid 1px #ccc",
                                     },
@@ -84,6 +119,7 @@ const Features = () => {
                                             color: "neutral.main2",
                                             borderColor: "primary.main2",
                                         },
+                                        width: { md: "100%" },
                                     }}
                                     onClick={() => setSelectedFeature(feature)}
                                 >
@@ -91,58 +127,67 @@ const Features = () => {
                                 </Box>
                             </Box>
                         ))}
-                    </Stack>
+                    </Box>
                 </Box>
             </Container>
 
-            <Box
-                sx={
-                    {
-                        // border: "solid orange"
-                    }
-                }
-            >
+            {/****************************************************/}
+            <Container>
                 <Box
                     sx={{
-                        height: "30vh",
-                        // border: "solid green",
-                        pr: "20%",
-                        position: "relative",
+                        // border: "solid orange",
+                        display: { md: "flex" },
+                        "&>*": {
+                            // border: "solid",
+                        },
+                        columnGap: { md: 1, lg: 5 },
                     }}
                 >
                     <Box
                         sx={{
-                            height: "100%",
-                            // border: "solid red",
-                            backgroundColor: "primary.main",
-                            borderTopRightRadius: "40%",
-                            borderBottomRightRadius: "40%",
-                        }}
-                    ></Box>
-                    <Box
-                        sx={{
-                            // border: "solid red",
-                            width: "100%",
-                            // height: "100%",
-                            position: "absolute",
-                            top: "-70px",
-                            left: 0,
+                            height: { xs: "40vh", sm: "50vh" },
+                            // border: "solid green",
+                            pr: "20%",
+                            position: "relative",
+                            width: {
+                                md: "100%",
+                            },
                         }}
                     >
-                        <Container>
+                        <Box
+                            sx={{
+                                height: "100%",
+                                // border: "solid yellow",
+                                backgroundColor: "primary.main",
+                                borderTopRightRadius: "35%",
+                                borderBottomRightRadius: "35%",
+                                position: "absolute",
+                                left: { xs: "-20%", lg: "-70%" },
+                                width: { xs: "105%", lg: "150%" },
+                            }}
+                        ></Box>
+                        <Box
+                            sx={{
+                                // border: "solid red",
+                                width: "100%",
+                                height: { xs: "100%", sm: "95%" },
+                                position: "absolute",
+                                top: "-60px",
+                                left: 0,
+                            }}
+                        >
                             <img src={selectedFeature.image} />
-                        </Container>
+                        </Box>
                     </Box>
-                </Box>
-                <Container>
-                    <Box
-                        sx={{
-                            textAlign: "center",
-                            //  border: "solid green",
-                            mt: "3rem",
-                        }}
-                    >
-                        <Container>
+                    <Container sx={{ mx: { md: "0" }, width: { md: "100%" } }}>
+                        <Box
+                            sx={{
+                                textAlign: { xs: "center", md: "left" },
+                                // border: "solid green",
+                                mt: "4rem",
+                            }}
+                        >
+                            {/* <Container > */}
                             <Typography
                                 component="h4"
                                 variant="h4"
@@ -162,12 +207,55 @@ const Features = () => {
                             >
                                 {selectedFeature.description}
                             </Typography>
-                        </Container>
-                    </Box>
-                </Container>
-            </Box>
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    width: { xs: "30%", md: "40%" },
+                                }}
+                            >
+                                More info
+                            </Button>
+                            {/* </Container> */}
+                        </Box>
+                    </Container>
+                </Box>
+            </Container>
         </>
     );
 };
 
 export default Features;
+
+{
+    /* <Container sx={{ mx: { md: "0" }, width: { md: "100%" } }}>
+    <Box
+        sx={{
+            textAlign: "center",
+            border: "solid green",
+            mt: "3rem",
+        }}
+    >
+        <Container>
+            <Typography
+                component="h4"
+                variant="h4"
+                sx={{
+                    fontSize: "1.5rem",
+                    fontWeight: "500",
+                    mb: "1.5rem",
+                }}
+            >
+                {selectedFeature.title}
+            </Typography>
+            <Typography
+                component="p"
+                variant="p"
+                color="neutral.main"
+                sx={{ mb: "1.5rem" }}
+            >
+                {selectedFeature.description}
+            </Typography>
+        </Container>
+    </Box>
+</Container>; */
+}

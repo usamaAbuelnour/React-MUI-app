@@ -4,7 +4,16 @@ import AppAccordion from "../../common/AppAccordion/AppAccordion";
 const FAQ = () => {
     return (
         <Container sx={{ mt: "7rem", mb: "8rem", textAlign: "center" }}>
-            <Box>
+            <Box
+                sx={{
+                    width: {
+                        md: "70%",
+                        lg: "50%",
+                    },
+                    // border: "solid",
+                    mx: { md: "auto" },
+                }}
+            >
                 <Typography
                     component="h4"
                     variant="h4"

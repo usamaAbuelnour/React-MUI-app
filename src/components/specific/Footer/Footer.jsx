@@ -10,14 +10,19 @@ const Footer = () => {
                 backgroundColor: "neutral.main2",
                 color: "#fff",
                 py: "2.5rem",
+                // border: "solid",
             }}
         >
             <Container
                 sx={{
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: { xs: "column", md: "row" },
                     alignItems: "center",
+                    columnGap: "2rem",
                     rowGap: "1.2rem",
+                    // border: "solid",
+
+                    // '&>*': {border: 'solid red'}
                 }}
             >
                 <BookMarkSVG color="#fff" />
@@ -25,9 +30,9 @@ const Footer = () => {
                     component="p"
                     variant="p"
                     sx={{
-                        fontSize: "0.88rem",
+                        fontSize: { xs: "0.88rem", md: "0.6rem" },
                         letterSpacing: "2px",
-                        pt: "1rem",
+                        pt: { xs: "1rem", md: 0 },
                         "&:hover": {
                             cursor: "pointer",
                             color: "primary.main2",
@@ -40,7 +45,7 @@ const Footer = () => {
                     component="p"
                     variant="p"
                     sx={{
-                        fontSize: "0.88rem",
+                        fontSize: { xs: "0.88rem", md: "0.6rem" },
                         letterSpacing: "2px",
                         "&:hover": {
                             cursor: "pointer",
@@ -54,9 +59,9 @@ const Footer = () => {
                     component="p"
                     variant="p"
                     sx={{
-                        fontSize: "0.88rem",
+                        fontSize: { xs: "0.88rem", md: "0.6rem" },
                         letterSpacing: "2px",
-                        pb: "1rem",
+                        pt: { xs: "1rem", md: 0 },
                         "&:hover": {
                             cursor: "pointer",
                             color: "primary.main2",
@@ -65,10 +70,17 @@ const Footer = () => {
                 >
                     CONTACT
                 </Typography>
-                <Box sx={{ display: "flex", columnGap: "2rem" }}>
+                <Box
+                    sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        columnGap: "2rem",
+                        ml: { md: "auto" },
+                    }}
+                >
                     <FacebookIcon
                         sx={{
-                            fontSize: "2rem",
+                            fontSize: { xs: "2rem", md: "1.7rem" },
                             "&:hover": {
                                 cursor: "pointer",
                                 color: "primary.main2",
@@ -77,7 +89,7 @@ const Footer = () => {
                     />
                     <TwitterIcon
                         sx={{
-                            fontSize: "2rem",
+                            fontSize: { xs: "2rem", md: "1.7rem" },
                             "&:hover": {
                                 cursor: "pointer",
                                 color: "primary.main2",

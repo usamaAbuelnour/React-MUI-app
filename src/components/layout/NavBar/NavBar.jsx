@@ -28,9 +28,11 @@ function NavBar(props) {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
-            </Typography>
+            <Box sx={{ my: 2 }}>
+                <Button>
+                    <img src={bookMarkLogo} alt="" />
+                </Button>
+            </Box>
             <Divider />
             <List>
                 {navItems.map((item) => (
@@ -96,15 +98,15 @@ function NavBar(props) {
                                 display: { xs: "none", md: "flex" },
                                 ml: "auto",
                                 // border: 'solid green',
-                                width: '50%',
-                                justifyContent: 'space-between'
+                                width: "50%",
+                                justifyContent: "space-between",
                             }}
                         >
                             {navItems.map((item, idx, items) => (
                                 <Button
                                     key={item}
                                     sx={{
-                                        width: '22%',
+                                        width: "22%",
                                         // border: 'solid blue',
                                         color:
                                             idx === items.length - 1
