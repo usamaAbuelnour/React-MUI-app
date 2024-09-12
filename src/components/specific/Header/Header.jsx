@@ -111,9 +111,11 @@ const Header = () => {
                                     "@media(min-width:500px)": {
                                         width: "47%",
                                     },
-                                    width: {
-                                        md: "100%",
-                                        lg: "47%",
+                                    "@media(min-width:900px)": {
+                                        width: "100%",
+                                    },
+                                    "@media(min-width:1200px)": {
+                                        width: "47%",
                                     },
                                 }}
                             >
@@ -130,9 +132,11 @@ const Header = () => {
                                     "@media(min-width:500px)": {
                                         width: "47%",
                                     },
-                                    width: {
-                                        md: "100%",
-                                        lg: "47%",
+                                    "@media(min-width:900px)": {
+                                        width: "100%",
+                                    },
+                                    "@media(min-width:1200px)": {
+                                        width: "47%",
                                     },
                                     borderColor: "#eee",
                                     background:
