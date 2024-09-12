@@ -49,7 +49,10 @@ const DownloadSection = () => {
                     component="h4"
                     variant="h4"
                     sx={{
-                        fontSize: "1.5rem",
+                        fontSize: {
+                            xs: "1.4rem",
+                            lg: "1.7rem",
+                        },
                         fontWeight: "500",
                         mb: "1rem",
                     }}

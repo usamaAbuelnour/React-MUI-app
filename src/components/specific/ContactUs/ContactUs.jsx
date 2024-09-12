@@ -38,7 +38,7 @@ const ContactUs = () => {
                         sx={{
                             lineHeight: "1.2",
                             my: {xs: "1.2rem", md: '1.7rem'},
-                            fontSize: {xs: "1.4rem", md: '1.6rem', lg: '1.8rem'},
+                            fontSize: {xs: "1.4rem", lg: '1.7rem'},
                             // border: 'solid',
                         }}
                     >

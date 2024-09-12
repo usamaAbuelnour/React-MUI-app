@@ -41,7 +41,7 @@ const Header = () => {
                     <Box
                         sx={{
                             // border: "solid ",
-                            width: { xs: "100%", md: '110%', lg: "115%" },
+                            width: { xs: "100%", md: "110%", lg: "115%" },
                             height: { xs: "125%", sm: "115%" },
                             position: "absolute",
                             top: "-70px",
@@ -71,8 +71,7 @@ const Header = () => {
                             variant="h4"
                             sx={{
                                 fontSize: {
-                                    xs: "1.7rem",
-                                    md: "1.4rem",
+                                    xs: "1.4rem",
                                     lg: "1.7rem",
                                 },
                                 fontWeight: "500",
@@ -98,13 +97,24 @@ const Header = () => {
                                 justifyContent: "space-between",
                                 flexDirection: { md: "column", lg: "row" },
                                 rowGap: { md: 2 },
-                                width: {lg: '80%'}
+                                width: { lg: "80%" },
                             }}
                         >
                             <Button
                                 variant="contained"
                                 sx={{
-                                    width: { xs: "47%", md: "100%", lg: "47%" },
+                                    "@media(max-width:500px)": {
+                                        width: "49%",
+                                        fontSize: "0.70rem",
+                                        px: "0.2rem",
+                                    },
+                                    "@media(min-width:500px)": {
+                                        width: "47%",
+                                    },
+                                    width: {
+                                        md: "100%",
+                                        lg: "47%",
+                                    },
                                 }}
                             >
                                 Get it on Chrome
@@ -112,7 +122,18 @@ const Header = () => {
                             <Button
                                 variant="outlined"
                                 sx={{
-                                    width: { xs: "47%", md: "100%", lg: "47%" },
+                                    "@media(max-width:500px)": {
+                                        width: "49%",
+                                        fontSize: "0.70rem",
+                                        px: "0.2rem",
+                                    },
+                                    "@media(min-width:500px)": {
+                                        width: "47%",
+                                    },
+                                    width: {
+                                        md: "100%",
+                                        lg: "47%",
+                                    },
                                     borderColor: "#eee",
                                     background:
                                         "linear-gradient(to top, #fff, #f2f2f2)",

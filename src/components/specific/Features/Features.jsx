@@ -47,7 +47,10 @@ const Features = () => {
                         component="h4"
                         variant="h4"
                         sx={{
-                            fontSize: "1.5rem",
+                            fontSize: {
+                                xs: "1.4rem",
+                                lg: "1.7rem",
+                            },
                             fontWeight: "500",
                             mb: "1rem",
                         }}
@@ -187,12 +190,14 @@ const Features = () => {
                                 mt: "4rem",
                             }}
                         >
-                            {/* <Container > */}
                             <Typography
                                 component="h4"
                                 variant="h4"
                                 sx={{
-                                    fontSize: "1.5rem",
+                                    fontSize: {
+                                        xs: "1.4rem",
+                                        lg: "1.7rem",
+                                    },
                                     fontWeight: "500",
                                     mb: "1.5rem",
                                 }}
@@ -210,12 +215,11 @@ const Features = () => {
                             <Button
                                 variant="contained"
                                 sx={{
-                                    width: { xs: "30%", md: "40%" },
+                                     mt: "1rem", px: "1.2rem" 
                                 }}
                             >
                                 More info
                             </Button>
-                            {/* </Container> */}
                         </Box>
                     </Container>
                 </Box>
